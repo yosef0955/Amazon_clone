@@ -12,5 +12,5 @@ function LayOut({children}) {
     )
 }
 
-export default LayOut
+export default LayOut;
 //layout error fixed
