@@ -1,18 +1,18 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import style from "./Header.module.css";
 import { FaSearch } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
 import { SlLocationPin } from "react-icons/sl";
 import LowerHeader from "./LowerHeader";
-import {Link} from "react-router-dom"
-import {DataContext} from "../DataProvider/DataProvider"
+import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 const Header = () => {
-
-const [{basket},dispatch] = useContext(DataContext)
-const totalItem = basket?.reduce((amount,item) => {
-  return item.amount + amount
-},0)
+  const [{ user, basket }, dispatch] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
 
   return (
     <section className={style.fixed}>
@@ -44,19 +44,34 @@ const totalItem = basket?.reduce((amount,item) => {
         </div>
 
         <div className={style.order_container}>
-          <Link to="#" clas   sName={style.language}>
+          <Link to="#" clas sName={style.language}>
             <div className={style.lang_container}>
-              <img className={style.flag} src="../../../public/Flag-United.png" alt="" />
+              <img
+                className={style.flag}
+                src="../../../public/Flag-United.png"
+                alt=""
+              />
               <select name="" id="" className={style.select}>
                 <option value="">EN</option>
               </select>
             </div>
           </Link>
 
-          <Link to="#">
+          <Link to={!user && "/auth"} className={style.Hello}>
             <div>
-              <p>Hello, Sign In</p>
-              <span>Account & Lists</span>
+              {user ? (
+                <>
+                  <p>
+                    Hello, <strong>{user?.email.split("@")[0]}</strong>
+                  </p>
+                  <span onClick={() => auth.signOut()}>Sign Out</span>
+                </>
+              ) : (
+                <>
+                  <p>Hello, Sign In</p>
+                  <span>Account & Lists</span>
+                </>
+              )}
             </div>
           </Link>
 

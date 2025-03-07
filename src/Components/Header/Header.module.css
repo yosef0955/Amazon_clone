@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .fixed {
@@ -76,13 +76,19 @@
   background-color: #f3f3f3;
 }
 
+.search select:hover {
+  background-color: rgb(204, 204, 204);
+  cursor: pointer;
+}
+
 .search input {
   border: 1px solid white;
   width: 100%;
 }
 
 .search svg {
-  padding: 10px;
+  width: 30px;
+  padding: 11.5px;
   background-color: #febd69;
   color: #1a1a1a;
   cursor: pointer;
@@ -103,7 +109,6 @@
   color: white;
   display: flex;
   align-items: center;
-  gap: 5px;
 }
 
 .order_container p {
@@ -111,6 +116,16 @@
   margin: 0;
   margin-bottom: -2px;
   font-weight: lighter;
+}
+
+.Hello {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.Hello strong {
+  font-size: 15px;
 }
 
 .language {
@@ -123,6 +138,15 @@
   background: #1a1a1a;
   border: none;
   color: white;
+}
+
+.return_order {
+  display: flex;
+  flex-direction: column;
+}
+
+.return_order p {
+  margin-bottom: -25px;
 }
 
 .cart {
