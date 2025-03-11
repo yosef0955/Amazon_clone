@@ -88,7 +88,7 @@
 
 .search svg {
   width: 30px;
-  padding: 11.5px;
+  padding: 11px;
   background-color: #febd69;
   color: #1a1a1a;
   cursor: pointer;
@@ -208,7 +208,10 @@
   .header_container {
     display: flex;
     flex-direction: column !important;
+    gap: 15px;
     height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .lower_container ul li:not(:first-child) {
@@ -217,5 +220,8 @@
 
   .language {
     display: none;
+  }
+  .fixed {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   }
 }

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* Column 1 */}
-        <div>
+        <div className={styles.hide}>
           <h2 className={styles.heading}>Get to Know Us</h2>
           <ul className={styles.list}>
             <li>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
 
         {/* Column 2 */}
-        <div>
+        <div  className={styles.hide}>
           <h2 className={styles.heading}>Make Money with Us</h2>
           <ul className={styles.list}>
             <li>
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         {/* Column 3 */}
-        <div>
+        <div className={styles.hide}>
           <h2 className={styles.heading}>Amazon Payment</h2>
           <ul className={styles.list}>
             <li>
